@@ -1,0 +1,56 @@
+
+> graph_project@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.1 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.29.38:3000
+- Environments: .env.local
+✓ Ready in 261ms
+
+ GET / 200 in 235ms (next.js: 120ms, application-code: 115ms)
+ GET /api/graph 200 in 93ms (next.js: 68ms, application-code: 25ms)
+ GET / 200 in 34ms (next.js: 5ms, application-code: 29ms)
+ GET /api/graph 200 in 27ms (next.js: 8ms, application-code: 19ms)
+ GET /api/graph?nodeType=billing&nodeId=91150214 200 in 8ms (next.js: 3ms, application-code: 5ms)
+ POST /api/query 200 in 2.4s (next.js: 53ms, application-code: 2.3s)
+ GET /api/graph?nodeType=delivery&nodeId=80738083 200 in 10ms (next.js: 5ms, application-code: 5ms)
+SQL generation error: Error: 400 {"error":{"message":"'messages.2' : for 'role:assistant' the following must be satisfied[('messages.2' : property 'data' is unsupported)]","type":"invalid_request_error"}}
+    at async generateSQL (src/lib/llm.js:152:28)
+    at async POST (src/app/api/query/route.js:31:34)
+  150 |
+  151 |   try {
+> 152 |     const chatCompletion = await groq.chat.completions.create({
+      |                            ^
+  153 |       messages,
+  154 |       model: 'llama-3.3-70b-versatile',
+  155 |       temperature: 0.1, {
+  status: 400,
+  headers: Headers {
+    date: 'Tue, 24 Mar 2026 17:27:49 GMT',
+    'content-type': 'application/json',
+    'content-length': '172',
+    connection: 'keep-alive',
+    'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate',
+    server: 'cloudflare',
+    vary: 'Origin',
+    'x-groq-region': 'bom',
+    'x-request-id': 'req_01kmge6w9zfmxawpx6gh17b1ke',
+    via: '1.1 google',
+    'cf-cache-status': 'DYNAMIC',
+    'set-cookie': '__cf_bm=GMqCBzur3f5QNOhVNn3Xo75sEUi493DBGLq06KAPEgA-1774373269.8046327-1.0.1.1-Ks46Cg7HgQT3wkz2.D9q8e63RvCWhgNTLxxV7z2Eo6kIi5pAtgLvlCDQwn.VDfwBGlV2B8Xm4A0EMhkkl_PdK9XwQITfajHvyYX3tFCRFLPf2QA2xUxsOKue3wg0vlRb; HttpOnly; Secure; Path=/; Domain=groq.com; Expires=Tue, 24 Mar 2026 17:57:49 GMT',
+    'strict-transport-security': 'max-age=15552000',
+    'cf-ray': '9e1763884dea29b7-HYD',
+    'alt-svc': 'h3=":443"; ma=86400'
+  },
+  error: {
+    error: {
+      message: "'messages.2' : for 'role:assistant' the following must be satisfied[('messages.2' : property 'data' is unsupported)]",
+      type: 'invalid_request_error'
+    }
+  }
+}
+ POST /api/query 200 in 664ms (next.js: 5ms, application-code: 659ms)
+ GET / 200 in 33ms (next.js: 4ms, application-code: 29ms)
+ GET /api/graph 200 in 23ms (next.js: 3ms, application-code: 20ms)
+ POST /api/query 200 in 1926ms (next.js: 1817µs, application-code: 1924ms)
